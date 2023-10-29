@@ -43,7 +43,7 @@ func _process(delta):
 	
 	# バーを移動させる
 	var newPositionX =  ($Bar.position.x + speed * delta * direction)
-	$Bar.position.x = clamp(newPositionX, 0, size.x - $Bar.size.x)
+	$Bar.position.x = clamp(newPositionX, 0, maxPos)
 
 
 func _input(event):
