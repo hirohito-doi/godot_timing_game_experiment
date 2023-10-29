@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6iylcd43dyqp"]
+
+[ext_resource type="PackedScene" uid="uid://bbelpoo7dxkbq" path="res://timing_bar.tscn" id="1_00ct1"]
+[ext_resource type="PackedScene" uid="uid://cc8y2fraq5fty" path="res://comment.tscn" id="2_bef7c"]
+
+[node name="Main" type="Node"]
+
+[node name="TimingBar" parent="." instance=ExtResource("1_00ct1")]
+offset_left = -249.0
+offset_right = 251.0
+
+[node name="Comment" parent="." instance=ExtResource("2_bef7c")]
+
+[connection signal="timing_evaluated" from="TimingBar" to="Comment" method="updateComment"]

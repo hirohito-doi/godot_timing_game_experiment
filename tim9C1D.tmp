@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbelpoo7dxkbq"]
+
+[ext_resource type="Script" path="res://timing_bar.gd" id="1_jho18"]
+
+[node name="TimingBar" type="Line2D"]
+points = PackedVector2Array(40, 0, 0, 0)
+default_color = Color(0.439216, 0.439216, 0.439216, 1)
+script = ExtResource("1_jho18")
+excelentAreaWidth = null
+gootAreaWidth = null
+speed = null
+metadata/_edit_group_ = true
+
+[node name="Bar" type="Line2D" parent="."]
+points = PackedVector2Array(-3.8147e-06, 2.22223, 4.23656, 2.22223)
+width = 40.0

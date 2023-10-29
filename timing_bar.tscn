@@ -1,0 +1,73 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbelpoo7dxkbq"]
+
+[ext_resource type="Script" path="res://timing_bar.gd" id="1_jho18"]
+
+[node name="TimingBar" type="ColorRect"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -250.0
+offset_top = 100.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+color = Color(0.807843, 0.396078, 0.305882, 1)
+script = ExtResource("1_jho18")
+goodAreaWidth = 30
+excellentAreaWidth = 10
+speed = 500
+metadata/_edit_use_anchors_ = true
+
+[node name="GoodZone" type="ColorRect" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(0, 50)
+color = Color(1, 0.807843, 0, 1)
+
+[node name="ExcellentZone" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -25.0
+offset_right = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.34902, 0.74902, 0.423529, 1)
+
+[node name="Bar" type="ColorRect" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -50.0
+offset_right = 5.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(5, 50)
+
+[node name="EvaluateTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="BlinkTimer" type="Timer" parent="."]
+wait_time = 0.06
+
+[node name="PreventPressTimer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[connection signal="timeout" from="EvaluateTimer" to="." method="_on_evaluate_timer_timeout"]
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]
