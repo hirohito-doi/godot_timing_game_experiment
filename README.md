@@ -1,1 +1,2 @@
 # godot_timing_game_experiment
+Godotによるタイミングゲームの習作
